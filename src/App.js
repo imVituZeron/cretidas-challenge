@@ -21,11 +21,9 @@ const Wrapper = Styled.div`
                        
   Header{
     grid-area: h;
-    background: #00b894;
   }
   Form{
     grid-area: f;
-    background: #dfe6e9;
   }
 `;
 
