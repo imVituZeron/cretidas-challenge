@@ -1,19 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Styled from 'styled-components';
 
 
-class View extends Component {
-   render() {
-      return (
-         <Page>
-            <div>
-               coisa que vao aparacer ainda
-            </div>
-            <button>SOLICITAR</button>
-         </Page>
-      );
-   }
+function View(props){
+
+   function handleClick(){
+         console.log(`
+            O nUmero de Parcelas: ${props.nparcelas}
+            O valor da Garantia: ${props.vgarantia}
+            O valor do Emprestimo: ${props.vemprestimo}
+         `)
+      }
+   
+   
+   return (
+      <Page>
+         <div>
+            <p> Parcelas: { props.nparcelas }</p>
+            <p> Garantia: { props.vgarantia }</p>
+            <p> Emprestimo: { props.vemprestimo }</p>
+         </div>
+         <button onClick={()=> handleClick()}>SOLICITAR</button>
+      </Page>
+   );
 }
+
 
 const Page = Styled.div`
    background: #DDD;
