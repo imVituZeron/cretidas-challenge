@@ -44,27 +44,33 @@ class Form extends Component {
          <FormPage>
             <h1>formulario</h1>
             <div class="container-first">
-               <label for="nParcelas"> Número de Parcelas: 
-                  <input type='text' id="nParcelas" value={this.state.nParcelas}
+               <div class="container-second">
+                  <h1>Compras</h1>
+                  <label> 
+                     <select  onChange={this.handlechangeType} class='select' name='select'>
+                        <option value="Veiculo">Veiculo</option>
+                        <option value="Imóvel">Imóvel</option>
+                     </select>
+                  </label>
+               </div>
+               <label for="nParcelas">Parcelas: 
+                  <input type='text' id="nParcelas" 
                      onChange={this.handleChangeParcelas}
+                     placeholder=""
                   />
                </label>
-               <label for="vGaratia"> Valor da Garantia: 
-                  <input type='text' id="vGaratia" value={this.state.vGarantia}  
+               <label for="vGaratia">Garantia: 
+                  <input type='text' id="vGaratia"   
                      onChange={this.handleChangeGarantia}
+                     placeholder="12000 a 24000"
                   />
                </label>
-               <label for="vEmprestimo"> Valor da Empréstimo: 
-                  <input type='text' id="vEmprestimo" value={this.state.vEmprestimo}
+               <label for="vEmprestimo">Empréstimo: 
+                  <input type='text' id="vEmprestimo" 
                      onChange={this.handleChangeEmprestimo}
+                     placeholder="30000 a 60000"
                   />
                </label>
-            </div>
-            <div class="container-second">
-               <select  onChange={this.handlechangeType} class='select' name='select'>
-                  <option value="Veiculo">Veiculo</option>
-                  <option value="Imóvel">Imóvel</option>
-               </select>
             </div>
             <View
                type={this.state.type}
@@ -78,14 +84,29 @@ class Form extends Component {
 }
 
 const FormPage = Styled.div`
+   font-family: Arial;
+
    div.container-first{
-      width: 370px;
+      margin-left: 400px;
+      background: #0984e3;
+      padding: 10px;
+      border-radius: 5px;
+      width: 200px;
+      label{
+         
+      }
+      input{
+         padding: 5px;
+      }
    }
    div.container-second{
       width: 370px;
 
       .select{
          width: 200px;
+         option{
+            padding: 5px;
+         }
       }
    }
 `;

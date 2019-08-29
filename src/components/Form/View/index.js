@@ -7,11 +7,12 @@ function View(props){
    function handleClick(){
          console.log(`
             O tipo é ${props.type}
-            O nUmero de Parcelas: ${props.nparcelas}
+            O número de Parcelas: ${props.nparcelas}
             O valor da Garantia: ${props.vgarantia}
             O valor do Emprestimo: ${props.vemprestimo}
-         `)
-      }
+         `);
+         alert('pedido solicitado!')
+      }  
    
    
    return (
@@ -31,20 +32,23 @@ function View(props){
 const Page = Styled.div`
    font-family: Arial;
    padding: 10px;
-   margin-left: 300px;
+   margin-left: 400px;
    width: 400px;
    background: #DDD;
    border-radius: 4px;
 
    button{
+      margin-left: 150px;
       padding: 10px;
       color: #000;
       background: #32ff7e;
       border-radius: 10px;
+      cursor: pointer;
    }
 
-   .view{
-
+   .view p{
+      margin-left: 50px;
+      padding: 5px;
    }
 `;
 
