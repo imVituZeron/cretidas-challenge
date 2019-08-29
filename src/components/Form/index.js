@@ -54,7 +54,12 @@ class Form extends Component {
                </label>
             </div>
             <div class="container-second">
-               lalal
+               <select name='select'>
+                  <option value="Veiculo">Veiculo</option>
+                  <option value="Imóvel">Imóvel</option>
+               </select>
+               <input type='range' min='12000' max='24000'/>
+               <input type='range' min='30000' max='60000'/>
             </div>
             <View 
                nparcelas={this.state.nParcelas}
