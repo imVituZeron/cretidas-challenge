@@ -8,10 +8,17 @@ class Form extends Component {
    constructor(props){
       super(props);
       this.state = {
+         type: '',
          nParcelas: 0,
          vGarantia: 0,
          vEmprestimo: 0
       }
+   }
+   handlechangeType = event => {
+      this.setState({
+         type: event.currentTarget.value,
+      })
+      console.log(this.state.type);
    }
 
    handleChangeGarantia = event => {
@@ -54,14 +61,13 @@ class Form extends Component {
                </label>
             </div>
             <div class="container-second">
-               <select name='select'>
+               <select  onChange={this.handlechangeType} class='select' name='select'>
                   <option value="Veiculo">Veiculo</option>
                   <option value="Imóvel">Imóvel</option>
                </select>
-               <input type='range' min='12000' max='24000'/>
-               <input type='range' min='30000' max='60000'/>
             </div>
-            <View 
+            <View
+               type={this.state.type}
                nparcelas={this.state.nParcelas}
                vgarantia={this.state.vGarantia}
                vemprestimo={this.state.vEmprestimo}
@@ -72,5 +78,15 @@ class Form extends Component {
 }
 
 const FormPage = Styled.div`
+   div.container-first{
+      width: 370px;
+   }
+   div.container-second{
+      width: 370px;
+
+      .select{
+         width: 200px;
+      }
+   }
 `;
 export default Form;
